@@ -1,5 +1,10 @@
 import React from 'react'
 import { ReposityItem } from './RepositoryItem'
+import '../styles/repositories.scss'
+import {useState, useEffect} from 'react';
+
+// https://api.github.com/orgs/rocketseat/repos
+
 
 const repository = {
     name: 'unform',
@@ -8,6 +13,7 @@ const repository = {
 }
 
 export function RepositoryList() {
+    const [repositories, useRepositories] = useState([])
     return (
         <section className="repository-list">
             <h1>Lista de repositórios</h1>
